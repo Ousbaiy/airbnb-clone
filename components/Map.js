@@ -24,7 +24,7 @@ const Map = ({ data }) => {
         <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
 
         {coordinates?.map((coord, index) => (
-          <Marker key={index} position={[coord.lat, coord.long]} >
+          <Marker key={index} position={[coord.lat, coord.long]} className="animate-bounce" >
             <Popup>{coord.title}</Popup>
           </Marker>
         ))}

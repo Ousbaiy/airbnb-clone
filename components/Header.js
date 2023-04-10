@@ -55,10 +55,10 @@ const Header = ({ placeholder }) => {
   };
 
   return (
-    <header className="sticky top-0 z-50 grid grid-cols-2 md:grid-cols-3 bg-white shadow-md p-5 md:px-10">
+    <header className="sticky top-0 z-50 grid grid-cols-3 md:grid-cols-3 bg-white shadow-md p-5 md:px-16">
       {/* left - logo */}
       <div
-        className="relative flex items-center h-10 cursor-pointer my-auto"
+        className="relative hidden md:flex items-center h-10 cursor-pointer my-auto"
         onClick={() => router.push('/')}
       >
         <Image
@@ -70,11 +70,11 @@ const Header = ({ placeholder }) => {
         />
       </div>
       {/* middle - search  */}
-      <div className="hidden md:flex items-center gap-x-2 md:border-2 rounded-full p-2 md:shadow-sm">
+      <div className="flex items-center gap-x-2 border-2 rounded-full p-2 shadow-sm col-span-2 md:col-span-1">
         <input
           type="text"
           placeholder={placeholder || 'Start your search'}
-          className="flex-1 outline-none text-sm text-gray-600 placeholder:text-gray-400 pl-2 hidden md:inline-flex"
+          className="flex-1 outline-none text-sm text-gray-600 placeholder:text-gray-400 pl-2 flex"
           value={searchInput}
           onChange={(e) => setSearchInput(e.target.value)}
         />
@@ -88,20 +88,21 @@ const Header = ({ placeholder }) => {
         <p className="hover:bg-gray-100 p-2 rounded-full hidden md:inline cursor-pointer duration-150">
           Become a host
         </p>
-        <GlobeAltIcon className="h-6 cursor-pointer" />
-        <div className="flex items-center gap-x-2 border-2 rounded-full p-2">
+        <GlobeAltIcon className="h-6 cursor-pointer hidden md:inline-flex" />
+        <div className="flex items-center gap-x-2 border-2 rounded-full p-2 hover:shadow-md transition duration-150 cursor-pointer ">
           <Bars3Icon className="h-6 cursor-pointer" />
           <UserCircleIcon className="h-6 cursor-pointer" />
         </div>
       </div>
 
       {searchInput && (
-        <div className="flex flex-col col-span-3 mx-auto pt-5">
+        <div className="flex flex-col col-span-3 mx-auto pt-5 ">
           <DateRangePicker
             ranges={[selectionRange]}
             minDate={new Date()}
             rangeColors={['#FD5B61']}
             onChange={handleSelect}
+            className="w-[270px] md:w-auto"
           />
           <div className="flex items-center border-b mb-4">
             <h2 className="text-2xl flex-1 font-semibold">Number of Guests</h2>

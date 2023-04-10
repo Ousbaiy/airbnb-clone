@@ -18,7 +18,9 @@ const Search = ({ data }) => {
     startDate && format(new Date(startDate), 'dd MMMM yy');
   const formattedEndDate = endDate && format(new Date(endDate), 'dd MMMM yy');
   const range = `${formattedStartDate} - ${formattedEndDate}`;
-  const placeholder = `${location} | ${range} | ${nuOfGuests}`;
+  const placeholder = `${location} | ${range} | ${nuOfGuests} ${
+    nuOfGuests > 1 ? 'guests' : 'guest'
+  }`;
 
   return (
     <div className="flex flex-col h-screen">
