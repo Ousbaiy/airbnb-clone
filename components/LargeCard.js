@@ -10,7 +10,7 @@ const LargeCard = () => {
       <div className='absolute top-1/2 -mt-8 left-12'>
         <h3 className='text-4xl mb-3 w-64'>The Greatest Outdoors</h3>
         <p>Wishlist curated by Airbnb</p>
-        <button className='text-sm text-white bg-gray-900 px-4 py-2 rounded-lg mt-5'>Get Inspired</button>
+        <button className='text-sm text-white bg-gray-900 hover:bg-white hover:text-gray-900 active:scale-105 transition duration-150  px-4 py-2 rounded-lg mt-5'>Get Inspired</button>
       </div>
     </section>
   );
