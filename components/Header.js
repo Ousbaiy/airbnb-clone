@@ -58,14 +58,14 @@ const Header = ({ placeholder }) => {
     <header className="sticky top-0 z-50 grid grid-cols-3 md:grid-cols-3 bg-white shadow-md p-5 md:px-16">
       {/* left - logo */}
       <div
-        className="relative hidden md:flex items-center h-10 cursor-pointer my-auto"
+        className="hidden md:flex items-center h-10 cursor-pointer my-auto"
         onClick={() => router.push('/')}
       >
         <Image
           src={Logo}
           alt="logo"
           className="object-contain object-[left]"
-          fill
+          width={150}
           priority
         />
       </div>
